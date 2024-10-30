@@ -1,0 +1,368 @@
+/* Base styles */
+body {
+  background-color: white;
+  color: #333;
+  margin: 0;
+  min-height: 100vh;
+  display: block;
+}
+
+.App {
+  width: min(100%, 1200px);
+  margin: 0 auto;
+  padding: clamp(1rem, 2vw, 2rem);
+  min-height: 100vh;
+}
+
+/* Navbar styles */
+.navbar {
+  width: 100%;
+  background-color: #0A2351;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  border-radius: 0;
+  display: grid;
+  gap: 1rem;
+  place-items: center;
+}
+
+.navbar h1 {
+  color: white;
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border-radius: 4px;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-links a.active {
+  background-color: #C8102E;
+}
+
+/* Card View styles */
+.pitchers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: clamp(1rem, 2vw, 2rem);
+  width: 100%;
+}
+
+.pitcher-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: grid;
+  gap: 1rem;
+}
+
+.pitcher-card h2 {
+  color: #0A2351;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #C8102E;
+  padding-bottom: 5px;
+}
+
+.pitcher-card h3 {
+  color: #0A2351;
+  margin: 10px 0;
+}
+
+.pitcher-details {
+  color: #333;
+}
+
+.stats, .contract {
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+/* Grid View styles */
+.pitchers-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: white;
+}
+
+.pitchers-table th {
+  background-color: #0A2351;
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+.pitchers-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+}
+
+.pitchers-table tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+.pitchers-table tr:hover {
+  background-color: #f0f0f0;
+}
+
+/* Form styles */
+.pitcher-form {
+  width: min(100%, 600px);
+  margin-inline: auto;
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.pitcher-form h2 {
+  color: #0A2351;
+  margin-bottom: 20px;
+}
+
+.pitcher-form h3 {
+  color: #0A2351;
+  margin: 15px 0 10px;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  background-color: white;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #0A2351;
+  box-shadow: 0 0 0 2px rgba(10, 35, 81, 0.1);
+}
+
+/* Form section headers */
+.form-group h3 {
+  color: #0A2351;
+  font-size: 1.1em;
+  margin: 15px 0 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Form buttons */
+.form-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.form-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.form-buttons button[type="submit"] {
+  background-color: #0A2351;
+  color: white;
+}
+
+.form-buttons .cancel-button {
+  background-color: #666;
+  color: white;
+}
+
+/* Button styles */
+.add-button {
+  background-color: #0A2351;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-button {
+  background-color: #0A2351;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.delete-button {
+  background-color: #C8102E;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-button {
+  background-color: #666;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Status messages */
+.loading {
+  color: #0A2351;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2em;
+}
+
+.error {
+  color: #C8102E;
+}
+
+/* AG Grid custom styles */
+.ag-theme-alpine {
+  --ag-header-background-color: #0A2351;
+  --ag-header-foreground-color: white;
+  --ag-odd-row-background-color: #f8f8f8;
+  --ag-row-hover-color: #f0f0f0;
+  --ag-selected-row-background-color: #e6e6e6;
+  --ag-font-size: 14px;
+  --ag-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 100%;
+  height: 100% !important;
+}
+
+.ag-theme-alpine .ag-root-wrapper {
+  border-radius: 8px;
+  width: 100%;
+}
+
+.ag-theme-alpine .ag-root {
+  height: auto !important;
+}
+
+.ag-theme-alpine .ag-body-viewport {
+  overflow-y: auto !important;
+}
+
+.ag-theme-alpine .ag-center-cols-container {
+  width: 100% !important;
+  min-width: 100% !important;
+}
+
+.ag-theme-alpine .ag-header-cell {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.ag-theme-alpine .ag-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8px 15px;
+}
+
+.ag-theme-alpine .ag-cell-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive adjustments */
+@container (max-width: 768px) {
+  .grid-view-container {
+    container-type: inline-size;
+    container-name: grid-view;
+  }
+  
+  .ag-theme-alpine {
+    --ag-font-size: 12px;
+  }
+  
+  .form-buttons {
+    flex-direction: column;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Action buttons in grid */
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+/* Card actions */
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+/* Grid View Container styles */
+.grid-view-container {
+  width: 100%;
+  display: grid;
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+.grid-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.grid-wrapper {
+  width: 100%;
+  height: 600px !important;
+  min-height: auto;
+}
